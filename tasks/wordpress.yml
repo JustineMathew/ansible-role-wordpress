@@ -1,0 +1,14 @@
+---
+- name: "Downloading Wordpress "
+  get_url:
+   url: "{{ wordpress_url }}"
+   dest: "{{ wordpress_dest }}"
+   checksum: "md5: {{wordpress_checksum}}"
+ 
+- name: "Extracting wordpress contents"
+  unarchive:
+   src: "{{ wordpress_dest }}"
+   dest: "{{ wordpress_unarchive }}"
+   remote_src: yes
+   
+    

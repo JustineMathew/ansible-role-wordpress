@@ -1,0 +1,33 @@
+---
+- name: "Deleting anonymous users"
+  mysql_user: 
+   login_user: root
+   login_password: ''
+   name: ''
+   host_all: yes
+   state: absent 
+   
+- name: " Enabling mysql root password"
+  mysql_user:
+   login_user: root
+   login_password: ''
+   name: root
+   host_all: yes
+   password: "{{ mysql_pass }}"
+
+- name: "adding a database"
+  mysql_db:
+   login_user: root
+   login_password: "{{ mysql_pass }}"
+   db: "{{mysql_db}}"
+   state: present
+   
+- name: adding wordpress user"
+  mysql_user:
+     login_user: root
+     login_password: "{{ mysql_pass }}"
+     name: "{{ wordpress_user }}"
+     host: localhost
+     password: "{{ wordpress_pass }}"
+     priv: "{{ mysql_db }}.*:ALL"
+ 

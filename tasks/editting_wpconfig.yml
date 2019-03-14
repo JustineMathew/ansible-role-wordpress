@@ -1,0 +1,20 @@
+--- 
+- name: "Editing Wp-Config.php"
+  replace:
+   path: /var/www/html/{{domain}}/wp-config-sample.php
+   regexp: "{{item.pattern}}"
+   replace: "{{item.value}}"
+  with_items:
+   - { 
+       "pattern": "define\\(\\s+'DB_NAME',\\s+'database_name_here'\\s+\\);" , 
+       "value": "define( 'DB_NAME', '{{ mysql_db }}' );" 
+     }
+     
+   - { 
+       "pattern": "define\\(\\s+'DB_USER',\\s+'username_here'\\s+\\);" , 
+       "value": "define( 'DB_USER', '{{ wordpress_user }}' );" 
+     }
+   - { 
+       "pattern": "define\\(\\s+'DB_PASSWORD',\\s+'password_here'\\s+\\);" , 
+        "value": "define( 'DB_PASSWORD', '{{ wordpress_pass }}' );" 
+     }

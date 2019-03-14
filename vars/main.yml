@@ -1,0 +1,12 @@
+---
+# vars file for wordpresstest
+mysql_db: justine
+mysql_pass: jmz@123
+wordpress_user: justine
+wordpress_pass: justine123
+domain: www.test.com
+wordpress_url: "https://wordpress.org/wordpress-latest.tar.gz"
+wordpress_dest: "/tmp/wordpress.tar.gz"
+wordpress_unarchive: "/tmp"
+wordpress_checksum: "{{ lookup('url','https://wordpress.org/wordpress-latest.tar.gz.md5') }}"
+

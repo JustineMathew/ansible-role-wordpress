@@ -1,0 +1,6 @@
+---
+- name: "Copying contents"
+  shell: cp -r /tmp/wordpress/*  /var/www/html/{{domain}} 
+  args:
+   warn: no
+   

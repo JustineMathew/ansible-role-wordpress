@@ -1,0 +1,10 @@
+---
+# tasks file for wordpresstest
+
+
+- include_tasks: lamp.yml
+- include_tasks: mysql_config.yml
+- include_tasks: wordpress.yml
+- include_tasks: virtual_host.yml
+- include_tasks: wordpress_contents.yml
+- include_tasks: editting_wpconfig.yml 

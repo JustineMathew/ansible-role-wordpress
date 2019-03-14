@@ -1,0 +1,28 @@
+---
+- name: "mysql removal"
+  yum:
+   name: mysql-service
+   state: absent
+- name: "mysql folder removal"
+  file:
+   path: /var/lib/mysql
+   state: absent
+   
+- name: "Installing lamp and mysql python" 
+  yum:
+   name: "{{ item }}"
+   state: present
+  with_items: 
+   - httpd
+   - mysql-server
+   - php
+   - php-mysql
+   - MySQL-python
+     
+- name: "Enabling Services"
+  service:
+   name: "{{ item }}"
+   state: restarted
+  with_items:
+   - httpd
+   - mysqld  
