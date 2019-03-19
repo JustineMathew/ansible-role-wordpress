@@ -17,15 +17,15 @@ Role Variables
 You can edit the following variables from the /var/main.yml, according to your need.
 
 ****
->db_name: 
->root_pass:
->wordpress_user: 
->wordpress_pass: 
->domain: 
->wordpress_url:
->wordpress_dest: 
->wordpress_unarchive: 
->wordpress_checksum: 
+- db_name: 
+- root_pass:
+- wordpress_user: 
+- wordpress_pass: 
+- domain: 
+- wordpress_url:
+- wordpress_dest: 
+- wordpress_unarchive: 
+- wordpress_checksum: 
 ****
 
 Example Playbook
