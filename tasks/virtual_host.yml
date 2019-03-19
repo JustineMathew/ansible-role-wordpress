@@ -14,4 +14,4 @@
   file:
    path: /var/www/html/{{domain}} 
    state: directory
-    
+  notify: "httpd-restart"

@@ -1,2 +1,12 @@
 ---
 # handlers file for wordpresstest
+- name: "httpd-restart"
+  service:
+   name: httpd
+   state: restarted
+   enabled: yes
+- name: "mysql-restart"
+  service:
+   name: mysqld
+   state: restarted
+   enabled: yes

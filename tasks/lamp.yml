@@ -1,7 +1,9 @@
 ---
+- assert: {that: "ansible_os_family == 'RedHat'"}
+
 - name: "mysql removal"
   yum:
-   name: mysql-service
+   name: mysql-server
    state: absent
 - name: "mysql folder removal"
   file:
@@ -18,11 +20,17 @@
    - php
    - php-mysql
    - MySQL-python
-     
-- name: "Enabling Services"
-  service:
-   name: "{{ item }}"
-   state: restarted
-  with_items:
-   - httpd
-   - mysqld  
+  notify: 
+    - httpd-restart
+    - mysql-restart
+
+- meta: flush_handlers
+
+#- name: "Enabling Services"
+#  service:
+#   name: "{{ item }}"
+#   state: restarted
+#  with_items:
+#   - httpd
+#  - mysqld  
+  

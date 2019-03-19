@@ -7,7 +7,7 @@
   with_items:
    - { 
        "pattern": "define\\(\\s+'DB_NAME',\\s+'database_name_here'\\s+\\);" , 
-       "value": "define( 'DB_NAME', '{{ mysql_db }}' );" 
+       "value": "define( 'DB_NAME', '{{ db_name }}' );" 
      }
      
    - { 
