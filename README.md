@@ -1,38 +1,41 @@
-Role Name
-=========
 
-A brief description of the role goes here.
+This playbook which will install a fully functional Apache , php , mysql in the a fresh server. This would also download and wordoress contents and configure the  in your document root. 
 
+### Configuration
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+The role is mainly for Centos
+
+You need to  edit the following for changes as you want.
+   >Editting templates/vhost.j2 and  will change the document root as per your need. Currenly the document root will be as "/var/www/html"
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+You can edit the following variables from the /var/main.yml, according to your need.
 
-Dependencies
-------------
+****
+db_name: 
+root_pass:
+wordpress_user: 
+wordpress_pass: 
+domain: 
+wordpress_url:
+wordpress_dest: 
+wordpress_unarchive: 
+wordpress_checksum: 
+****
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
-
-Example Playbook
-----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
-License
--------
-
-BSD
+#Example Playbook
+-------------
+hosts: centos
+  roles:
+   - rolename
 
 Author Information
 ------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Name:   Justine Mathew Zacharias
+Mail:   justinejmz@gmail.com
+Mob:    +91 8301862439
+Linkdln: https://www.linkedin.com/in/justine-mathew-zacharias-223560157/
