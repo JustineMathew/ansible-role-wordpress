@@ -6,7 +6,7 @@ This playbook which will install a fully functional Apache , php , mysql in the 
 Configuration Requirements
 ------------
 
-The role is mainly for Centos
+The role is mainly for Centos6
 
 You need to  edit the following for changes as you want.
    >Editting templates/vhost.j2 and  will change the document root as per your need. Currenly the document root will be as "/var/www/html"
