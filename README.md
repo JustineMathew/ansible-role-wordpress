@@ -1,7 +1,7 @@
 #Ansible Playbook To Install LampStack and configure wordpress
-Ansible Playbook To Install LampStack and configure wordpress
+Ansible Role To Install LampStack and configure wordpress
 -----------
-This playbook which will install a fully functional Apache , php , mysql in the a fresh server. This would also download and wordoress contents and configure the  in your document root. 
+This Role which will install a fully functional Apache , php , mysql in the a fresh server. This would also download and wordoress contents and configure the  in your document root. 
 
 Configuration Requirements
 ------------
